@@ -1,0 +1,30 @@
+<!--Template to display all products-->
+
+
+<div class="backbtn-wrapper">
+  <i ng-click="mainCtrl.goToLogin()" class="fa fa-2x fa-arrow-left"></i>
+</div>
+
+<div class="btn-addproduct">
+  <i ng-click="mainCtrl.goToAddProduct()" class="fa fa-2x fa-plus"></i>
+</div>
+
+<div class="container">
+  <h2>Welcome {{mainCtrl.username}}, here are your products...</h2>
+  <ul>
+    <li class="product" ng-repeat="product in mainCtrl.products">
+      <img data-ng-src={{product.picture}} />
+      <div class="product-info">
+        <p>Name: {{product.name}}<p>
+        <p>Price: ${{product.price}}<p>
+        <p>Category: {{product.category}}<p>
+        <p>Description: {{product.description}}<p>
+        <p>Rating: {{product.rating}}<p>
+        <div class="product-controls">
+          <i ng-click="" class="fa fa-2x fa-pencil"></i>
+          <i ng-click="mainCtrl.deleteProduct(product)" class="fa fa-2x fa-close"></i>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

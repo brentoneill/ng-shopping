@@ -1,0 +1,18 @@
+<!--Template to add a product-->
+<div class="backbtn-wrapper">
+  <i ng-click="mainCtrl.goBackToProducts()" class="fa fa-2x fa-arrow-left"></i>
+</div>
+
+
+<div class="container add-product">
+  <h2>Add a product</h2>
+  <form>
+    <input type="text" ng-model="newProduct.picture" placeholder="img url goes here">
+    <input type="text" ng-model="newProduct.name" placeholder="Name">
+    <input type="text" ng-model="newProduct.price" placeholder="Price">
+    <input type="text" ng-model="newProduct.category" placeholder="Category">
+    <input type="text" ng-model="newProduct.description" placeholder="Description">
+    <input type="text" ng-model="newProduct.rating" placeholder="Rating">
+    <a href="" class="btn-login" ng-click="mainCtrl.addNewProduct(newProduct)">Add product</a>
+  </form>
+</div>

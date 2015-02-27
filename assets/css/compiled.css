@@ -1,0 +1,154 @@
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
+body, ul {
+  margin: 0;
+  padding: 0; }
+
+* {
+  box-sizing: border-box; }
+
+ul {
+  list-style-type: none; }
+
+a {
+  text-decoration: none; }
+  a:visited {
+    color: inherit; }
+
+body {
+  font-family: 'Oxygen', sans-serif;
+  color: #343434; }
+
+.container {
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 75%;
+  margin-bottom: 20px; }
+
+.login {
+  margin: 0 auto;
+  margin-top: 30vh;
+  width: 50%;
+  padding: 40px;
+  border-radius: 3px;
+  border: 3px solid black;
+  text-align: center; }
+  .login input {
+    width: 260px;
+    padding: 10px;
+    border: 0;
+    border: thin solid black;
+    border-radius: 3px;
+    font-size: 14px; }
+  .login a {
+    border: thin solid black;
+    border-radius: 3px;
+    margin-left: 10px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: all .5s ease; }
+    .login a:hover {
+      box-shadow: 2px 2px 0px black; }
+
+.btn-addproduct {
+  position: fixed;
+  top: 20px;
+  right: 20px; }
+  .btn-addproduct i {
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .5s ease; }
+    .btn-addproduct i:hover {
+      box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+      transform: translateX(-4px); }
+
+.product {
+  position: relative;
+  display: inline-block;
+  border: thin solid black;
+  border-radius: 3px;
+  margin-right: 2%;
+  width: 32%;
+  margin-bottom: 20px;
+  padding: 20px;
+  min-height: 500px;
+  text-align: center;
+  transition: all .5s ease; }
+  .product p {
+    margin-bottom: 4px; }
+  .product img {
+    border-radius: 3px;
+    max-height: 200px; }
+  .product:nth-child(3n+3) {
+    margin-right: 0; }
+  .product:hover {
+    transform: translateY(-10px);
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2); }
+
+.product-info {
+  text-align: left; }
+
+.product-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px; }
+  .product-controls i {
+    cursor: pointer;
+    transition: all .5s ease;
+    opacity: .3; }
+    .product-controls i:hover {
+      transform: scale(1.2);
+      opacity: 1; }
+    .product-controls i:first-child {
+      margin-right: 5px; }
+  .product-controls .fa-close {
+    color: red; }
+  .product-controls .fa-pencil {
+    color: blue; }
+
+.add-product {
+  text-align: center; }
+  .add-product input {
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+    padding: 10px;
+    border: thin solid gray;
+    margin-bottom: 20px; }
+  .add-product form {
+    width: 50%;
+    margin: 0 auto;
+    position: relative; }
+  .add-product a {
+    display: block;
+    float: right;
+    color: #343434;
+    border: thin solid #343434;
+    border-radius: 3px;
+    padding: 10px;
+    transition: all .5s ease; }
+    .add-product a:hover {
+      background-color: #343434;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2); }
+
+.backbtn-wrapper {
+  position: absolute;
+  top: 20px;
+  left: 20px; }
+  .backbtn-wrapper i {
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .5s ease; }
+    .backbtn-wrapper i:hover {
+      box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+      transform: translateX(-4px); }
+
+/*# sourceMappingURL=compiled.css.map */
