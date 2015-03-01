@@ -33,14 +33,16 @@ body {
   border: 3px solid black;
   text-align: center; }
   .login input {
-    width: 260px;
+    width: 60%;
     padding: 10px;
     border: 0;
     border: thin solid black;
     border-radius: 3px;
-    font-size: 14px; }
+    font-size: 14px;
+    margin-bottom: 20px; }
   .login a {
-    border: thin solid black;
+    background-color: black;
+    color: white;
     border-radius: 3px;
     margin-left: 10px;
     padding: 10px;
@@ -48,7 +50,8 @@ body {
     padding-right: 20px;
     transition: all .5s ease; }
     .login a:hover {
-      box-shadow: 2px 2px 0px black; }
+      box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+      transform: translateY(-4px); }
 
 .btn-addproduct {
   position: fixed;
@@ -62,8 +65,8 @@ body {
     cursor: pointer;
     transition: all .5s ease; }
     .btn-addproduct i:hover {
-      box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
-      transform: translateX(-4px); }
+      box-shadow: -4px 4px 0px rgba(0, 0, 0, 0.2);
+      transform: translateX(4px); }
 
 .product {
   position: relative;
@@ -74,7 +77,7 @@ body {
   width: 32%;
   margin-bottom: 20px;
   padding: 20px;
-  min-height: 500px;
+  min-height: 400px;
   text-align: center;
   transition: all .5s ease; }
   .product p {
@@ -93,8 +96,10 @@ body {
 
 .product-controls {
   position: absolute;
-  bottom: 20px;
-  right: 20px; }
+  bottom: 0px;
+  right: 0px; }
+  .product-controls input[type="checkbox"] {
+    display: none; }
   .product-controls i {
     cursor: pointer;
     transition: all .5s ease;
@@ -137,7 +142,7 @@ body {
       box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2); }
 
 .backbtn-wrapper {
-  position: absolute;
+  position: fixed;
   top: 20px;
   left: 20px; }
   .backbtn-wrapper i {
@@ -150,5 +155,54 @@ body {
     .backbtn-wrapper i:hover {
       box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
       transform: translateX(-4px); }
+
+.back input, .back textarea {
+  display: block;
+  width: 100%;
+  border-radius: 3px;
+  padding: 10px;
+  border: thin solid gray;
+  margin-bottom: 10px; }
+.back textarea {
+  height: 150px;
+  resize: none; }
+
+/*CSS for FlipCard*/
+.flip-container {
+  perspective: 1000;
+  margin: 0 auto; }
+
+/* flip the pane when hovered */
+.flipped {
+  transform: rotateY(180deg); }
+
+.flip-container, .front, .back {
+  width: 260px;
+  height: 417px; }
+
+/* flip speed goes here */
+.flipper {
+  transition: 1s;
+  transform-style: preserve-3d;
+  position: relative; }
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white; }
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg); }
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg); }
 
 /*# sourceMappingURL=compiled.css.map */

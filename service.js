@@ -9,7 +9,7 @@
           category: 'animals',
           picture: 'https://placeimg.com/300/300/animals',
           description: 'what a cute animal',
-          rating: 5
+          rating: 3
         },
         {
           name: "Product 2",
@@ -17,7 +17,7 @@
           category: 'tech',
           picture: 'https://placeimg.com/300/300/tech',
           description: 'what a cool tech',
-          rating: 5
+          rating: 4
         },
         {
           name: "Product 3",
@@ -33,7 +33,7 @@
           category: 'people',
           picture: 'https://placeimg.com/300/300/people',
           description: 'what a good people',
-          rating: 5
+          rating: 2
         },
         {
           name: "Product 5",
@@ -60,7 +60,7 @@
         products.splice(idx, 1);
       };
 
-      var editProduct = function(product) {
+      var editAProduct = function(product, idx) {
 
       };
 

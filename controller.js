@@ -22,9 +22,10 @@
         }
       };
 
-      //Update product
+      //Edit Product
       mainCtrl.editProduct = function (editedProduct){
-        ProductsService.editAProduct(editedProduct);
+        console.log('editing a product');
+        console.log(editedProduct);
       };
 
       //Delete producut
@@ -48,7 +49,16 @@
       };
 
       mainCtrl.goToLogin = function(){
+        $location.path('/admin');
+      };
+
+      mainCtrl.goToStorefront = function(){
         $location.path('/');
-      }
+      };
+
+      mainCtrl.goToCart = function(){
+        $location.path('/cart');
+      };
+
     });
 })();                        //IIFE

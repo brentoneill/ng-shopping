@@ -2,7 +2,6 @@
   position: fixed;
   top:20px;
   right:20px;
-
   i {
     color:white;
     background-color:black;
@@ -11,8 +10,8 @@
     cursor:pointer;
     transition: all .5s ease;
     &:hover {
-      box-shadow: 4px 4px 0px rgba(0,0,0,.2);
-      transform:translateX(-4px);
+      box-shadow: -4px 4px 0px rgba(0,0,0,.2);
+      transform:translateX(4px);
     }
   }
 }
@@ -26,7 +25,7 @@
   width:32%;
   margin-bottom:20px;
   padding:20px;
-  min-height:500px;
+  min-height:400px;
   text-align:center;
   transition: all .5s ease;
   p {
@@ -36,7 +35,7 @@
     border-radius:3px;
     max-height:200px;
   }
-  &:nth-child(3n+3){
+  &:nth-child(3n+3) {
     margin-right:0;
   }
   &:hover {
@@ -51,8 +50,11 @@
 
 .product-controls {
   position:absolute;
-  bottom:20px;
-  right:20px;
+  bottom:0px;
+  right:0px;
+  input[type="checkbox"]{
+    display:none;
+  }
   i {
     cursor:pointer;
     transition:all .5s ease;

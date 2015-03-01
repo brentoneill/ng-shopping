@@ -1,0 +1,23 @@
+<!--Store Front template-->
+
+<div class="btn-addproduct">
+  <i ng-click="mainCtrl.goToCart()" class="fa fa-2x fa-shopping-cart"></i><span class=""> 0</span>
+</div>
+
+
+<div class="container">
+  <ul>
+    <li class="product" ng-repeat="product in mainCtrl.products">
+      <img data-ng-src={{product.picture}} />
+        <div class="product-info">
+          <p>Name: {{product.name}}<p>
+          <p>Price: ${{product.price}}<p>
+          <p>Category: {{product.category}}<p>
+          <p>Description: {{product.description}}<p>
+          <p>Rating: {{product.rating}}<p>
+        </div>
+      <a href="" class="addtocart-btn">Add to cart</a>
+    </li>
+  <ul>
+    <a class=""ng-click="mainCtrl.goToLogin()" href="">Login to Admin area</a>
+</div>

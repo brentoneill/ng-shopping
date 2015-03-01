@@ -11,7 +11,15 @@
   .config(function($routeProvider){
     $routeProvider
       .when('/', {
-        templateUrl: 'views/home.html',
+        templateUrl: 'views/storefront.html',
+        controller: 'MainController as mainCtrl'
+      })
+      .when('/admin', {
+        templateUrl: 'views/adminlogin.html',
+        controller: 'MainController as mainCtrl'
+      })
+      .when('/cart', {
+        templateUrl: 'views/shoppingcart.html',
         controller: 'MainController as mainCtrl'
       })
       .when('/products', {
