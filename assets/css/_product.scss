@@ -60,22 +60,23 @@
   input[type="checkbox"]{
     display:none;
   }
-  i {
-    cursor:pointer;
-    transition:all .5s ease;
-    opacity:.3;
-    &:hover {
-      transform:scale(1.2);
-      opacity:1;
-    }
-    &:first-child{
-      margin-right:5px;
-    }
+}
+
+i {
+  cursor:pointer;
+  transition:all .5s ease;
+  opacity:.3;
+  &:hover {
+    transform:scale(1.2);
+    opacity:1;
   }
-  .fa-close {
-    color:$red;
+  &:first-child{
+    margin-right:5px;
   }
-  .fa-pencil {
-    color:$blue;
-  }
+}
+.fa-close {
+  color:$red;
+}
+.fa-pencil {
+  color:$blue;
 }

@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Oxygen);
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic);
 body, ul {
   margin: 0;
   padding: 0; }
@@ -15,7 +15,7 @@ a {
     color: inherit; }
 
 body {
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   color: #343434; }
 
 .container {
@@ -26,7 +26,8 @@ body {
 
 body {
   background-image: url("../images/bg.png");
-  background-repeat: repeat; }
+  background-repeat: repeat;
+  overflow-x: hidden; }
 
 h2 {
   color: white; }
@@ -115,32 +116,57 @@ a.admin-login {
   right: 0px; }
   .product-controls input[type="checkbox"] {
     display: none; }
-  .product-controls i {
-    cursor: pointer;
-    transition: all .5s ease;
-    opacity: .3; }
-    .product-controls i:hover {
-      transform: scale(1.2);
-      opacity: 1; }
-    .product-controls i:first-child {
-      margin-right: 5px; }
-  .product-controls .fa-close {
-    color: red; }
-  .product-controls .fa-pencil {
-    color: blue; }
+
+i {
+  cursor: pointer;
+  transition: all .5s ease;
+  opacity: .3; }
+  i:hover {
+    transform: scale(1.2);
+    opacity: 1; }
+  i:first-child {
+    margin-right: 5px; }
+
+.fa-close {
+  color: red; }
+
+.fa-pencil {
+  color: blue; }
 
 .table-item {
   background-color: white;
   color: #343434; }
+  .table-item:hover {
+    background-color: #f3f3f3; }
+
+.admin-greeting {
+  float: left; }
+
+.searchbox-wrapper {
+  float: right; }
+  .searchbox-wrapper input {
+    display: block;
+    width: 200px;
+    border-radius: 3px;
+    padding: 10px;
+    border: thin solid gray;
+    margin-bottom: 20px;
+    margin-top: 20px; }
 
 .product-table {
+  border-collapse: collapse;
   width: 100%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  font-size: 13px;
+  transition: all .5s ease;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); }
   .product-table thead {
     color: white;
-    margin-bottom: 6px; }
+    font-size: 16px; }
   .product-table td {
-    padding: 10px; }
+    padding: 10px;
+    transition: all .5s ease;
+    text-align: center; }
   .product-table td.image {
     padding: 2px; }
     .product-table td.image img {
@@ -148,14 +174,20 @@ a.admin-login {
       width: 80px;
       border-radius: 4px; }
   .product-table td.name {
-    width: 200px; }
+    width: 100px; }
   .product-table .image,
   .product-table .price,
   .product-table .rating {
     text-align: center; }
   .product-table .description {
     overflow-y: auto;
-    max-height: 68px; }
+    max-height: 68px;
+    text-align: left; }
+  .product-table tbody {
+    transition: all .5s ease;
+    /*     .odd{
+      background-color:lighten(\$black, 70%);
+    } */ }
 
 .add-product {
   text-align: center; }
@@ -248,5 +280,44 @@ a.admin-login {
 /* back, initially hidden pane */
 .back {
   transform: rotateY(180deg); }
+
+.view-animate.ng-enter, .view-animate.ng-leave {
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.7s;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.7s;
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0; }
+
+.view-animate.ng-enter {
+  opacity: 1; }
+
+.view-animate.ng-enter.ng-enter-active {
+  opacity: 1; }
+
+.view-animate.ng-leave.ng-leave-active {
+  opacity: 0; }
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s; }
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity: 0;
+  transform: translateX(2000px); }
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity: 1;
+  transform: translateX(0); }
 
 /*# sourceMappingURL=compiled.css.map */

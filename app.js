@@ -3,7 +3,8 @@
   "use strict";
 
   angular.module('angShopping', [
-    'ngRoute'
+    'ngRoute',
+    'ngAnimate'
   ])
   .config(function($routeProvider){
     $routeProvider

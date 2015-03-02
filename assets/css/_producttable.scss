@@ -1,17 +1,45 @@
+
+
+
 .table-item {
-  background-color:white;
+  background-color:$white;
   color:$black;
+  &:hover{
+    background-color:lighten($black, 75%);
+  }
+}
+
+.admin-greeting {
+  float:left;
+}
+.searchbox-wrapper {
+  float:right;
+  input {
+    display:block;
+    width:200px;
+    border-radius:3px;
+    padding:10px;
+    border: thin solid $grey;
+    margin-bottom:20px;
+    margin-top:20px;
+  }
 }
 
 .product-table {
+  border-collapse:collapse;
   width:100%;
   margin:0 auto;
+  font-size:13px;
+  transition:all .5s ease;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
   thead {
     color:white;
-    margin-bottom:6px;
+    font-size:16px;
   }
   td {
     padding:10px;
+    transition:all .5s ease;
+    text-align:center;
   }
   td.image {
     padding:2px;
@@ -22,7 +50,7 @@
     }
   }
   td.name {
-    width:200px;
+    width:100px;
   }
   .image,
   .price,
@@ -32,5 +60,12 @@
   .description {
     overflow-y:auto;
     max-height:68px;
+    text-align:left;
+  }
+  tbody {
+    transition:all .5s ease;
+/*     .odd{
+  background-color:lighten(\$black, 70%);
+} */
   }
 }

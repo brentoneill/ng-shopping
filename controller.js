@@ -8,6 +8,8 @@
     .controller('MainController', function (ProductsService, $scope, $location){
       var mainCtrl = this;
 
+      mainCtrl.newProduct = {};
+
       mainCtrl.products = ProductsService.getProducts();
 
       //Add product
@@ -17,8 +19,7 @@
         }
         else {
           ProductsService.addNewProduct(newProduct);       //Tells the servcice to add a new product
-          $scope.newProduct = {};                          //Resets the product so more can be added
-          $location.path('/products');
+          $location.path('/productstable');
         }
       };
 
@@ -36,7 +37,7 @@
       //Routing stuff
       mainCtrl.login = function(username){
         if(username === 'brent'){
-          $location.path('/products');
+          $location.path('/productstable');
           mainCtrl.username = username;
           console.log(mainCtrl.username);
         };
@@ -46,8 +47,8 @@
         $location.path('/addproduct');
       };
 
-      mainCtrl.goBackToProducts = function(){
-        $location.path('/products');
+      mainCtrl.goToProducts = function(){
+        $location.path('/productstable');
       };
 
       mainCtrl.goToLogin = function(){

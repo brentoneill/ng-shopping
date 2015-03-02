@@ -1,5 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Oxygen);
-
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic);
 
 $black:    #343434;
 $white:    white;
@@ -8,6 +7,6 @@ $red:      red;
 $blue:     blue;
 
 body {
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   color:$black;
 }

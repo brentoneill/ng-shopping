@@ -9,13 +9,16 @@
 </head>
 <body ng-app="angShopping">
 
-<ng-view>
-<!--Angular app sits here-->
-</ng-view>
+<div class="view-animate-container">
+  <ng-view class="view-animate">
+  <!--Angular app sits here-->
+  </ng-view>
+</div>
 
 <!--Bower components-->
 <script src="assets/bower_components/angular/angular.js"></script>
 <script src="assets/bower_components/angular-route/angular-route.js"></script>
+<script src="assets/bower_components/angular-animate/angular-animate.js"></script>
 
 <!--App script goes here-->
 <script src="app.js"></script>

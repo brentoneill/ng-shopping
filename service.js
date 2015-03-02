@@ -51,12 +51,9 @@
 
       var addProduct = function (product) {
         products.push(product);
-        console.log('trying to add product');
       };
 
-      var deleteProduct = function(product){
-        var idx = products.indexOf(product);
-        console.log(idx);
+      var deleteProduct = function(idx){
         products.splice(idx, 1);
       };
 
