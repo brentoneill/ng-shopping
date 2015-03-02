@@ -183,11 +183,6 @@ i {
     overflow-y: auto;
     max-height: 68px;
     text-align: left; }
-  .product-table tbody {
-    transition: all .5s ease;
-    /*     .odd{
-      background-color:lighten(\$black, 70%);
-    } */ }
 
 .add-product {
   text-align: center; }
@@ -292,9 +287,6 @@ i {
   right: 0;
   bottom: 0;
   opacity: 0; }
-
-.view-animate.ng-enter {
-  opacity: 1; }
 
 .view-animate.ng-enter.ng-enter-active {
   opacity: 1; }
