@@ -24,6 +24,16 @@ body {
   width: 75%;
   margin-bottom: 20px; }
 
+body {
+  background-image: url("../images/bg.png");
+  background-repeat: repeat; }
+
+h2 {
+  color: white; }
+
+a.admin-login {
+  color: white; }
+
 .login {
   margin: 0 auto;
   margin-top: 30vh;
@@ -31,7 +41,8 @@ body {
   padding: 40px;
   border-radius: 3px;
   border: 3px solid black;
-  text-align: center; }
+  text-align: center;
+  background-color: white; }
   .login input {
     width: 60%;
     padding: 10px;
@@ -79,7 +90,9 @@ body {
   padding: 20px;
   min-height: 400px;
   text-align: center;
-  transition: all .5s ease; }
+  transition: all .5s ease;
+  background-color: white;
+  font-size: 12px; }
   .product p {
     margin-bottom: 4px; }
   .product img {
@@ -89,10 +102,12 @@ body {
     margin-right: 0; }
   .product:hover {
     transform: translateY(-10px);
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2); }
+    box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.4); }
 
 .product-info {
   text-align: left; }
+  .product-info .description {
+    height: 100px; }
 
 .product-controls {
   position: absolute;
@@ -114,15 +129,46 @@ body {
   .product-controls .fa-pencil {
     color: blue; }
 
+.table-item {
+  background-color: white;
+  color: #343434; }
+
+.product-table {
+  width: 100%;
+  margin: 0 auto; }
+  .product-table thead {
+    color: white;
+    margin-bottom: 6px; }
+  .product-table td {
+    padding: 10px; }
+  .product-table td.image {
+    padding: 2px; }
+    .product-table td.image img {
+      height: 80px;
+      width: 80px;
+      border-radius: 4px; }
+  .product-table td.name {
+    width: 200px; }
+  .product-table .image,
+  .product-table .price,
+  .product-table .rating {
+    text-align: center; }
+  .product-table .description {
+    overflow-y: auto;
+    max-height: 68px; }
+
 .add-product {
   text-align: center; }
-  .add-product input {
+  .add-product input, .add-product textarea {
     display: block;
     width: 100%;
     border-radius: 3px;
     padding: 10px;
     border: thin solid gray;
     margin-bottom: 20px; }
+  .add-product textarea {
+    resize: none;
+    height: 160px; }
   .add-product form {
     width: 50%;
     margin: 0 auto;
@@ -130,14 +176,13 @@ body {
   .add-product a {
     display: block;
     float: right;
-    color: #343434;
+    color: white;
+    background-color: black;
     border: thin solid #343434;
     border-radius: 3px;
     padding: 10px;
     transition: all .5s ease; }
     .add-product a:hover {
-      background-color: #343434;
-      color: white;
       transform: translateY(-2px);
       box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2); }
 
@@ -189,7 +234,6 @@ body {
 /* hide back of pane during swap */
 .front, .back {
   backface-visibility: hidden;
-  border-radius: 10px;
   position: absolute;
   top: 0;
   left: 0;

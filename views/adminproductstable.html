@@ -1,0 +1,57 @@
+<!--Template to display all products on admin side-->
+
+
+<div class="backbtn-wrapper">
+  <i ng-click="mainCtrl.goToLogin()" class="fa fa-2x fa-arrow-left"></i>
+</div>
+
+<div class="btn-addproduct">
+  <i ng-click="mainCtrl.goToAddProduct()" class="fa fa-2x fa-plus"></i>
+</div>
+
+<!-- <div class="container">
+  <ul class="product-table">
+    <li class="table-item" ng-repeat="product in mainCtrl.products">
+      <img data-ng-src={{product.picture}} />
+      <p>Name: {{product.name}}<p>
+      <p>Price: \${{product.price}}<p>
+      <p>Category: {{product.category}}<p>
+      <p class="description">Description: {{product.description}}<p>
+      <p>Rating: {{product.rating}}<p>
+    </li>
+  </ul>
+ -->
+<div class="container">
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Rating</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-item" ng-repeat="product in mainCtrl.products">
+        <td class="image">
+          <img data-ng-src={{product.picture}} />
+        </td>
+        <td class-"name">{{product.name}}</td>
+        <td class="price">{{product.price}}</td>
+        <td>{{product.category}}</td>
+        <td>
+          <div class="description">{{product.description}}</div>
+        </td>
+        <td class="rating">{{product.rating}}</td>
+        <td>
+            <i ng-click="mainCtrl.editProduct(product)" class="fa fa-2x fa-pencil"></i>
+            <i ng-click="mainCtrl.deleteProduct(product)" class="fa fa-2x fa-close"></i>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

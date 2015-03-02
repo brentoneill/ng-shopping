@@ -1,0 +1,36 @@
+.table-item {
+  background-color:white;
+  color:$black;
+}
+
+.product-table {
+  width:100%;
+  margin:0 auto;
+  thead {
+    color:white;
+    margin-bottom:6px;
+  }
+  td {
+    padding:10px;
+  }
+  td.image {
+    padding:2px;
+    img {
+      height:80px;
+      width:80px;
+      border-radius:4px;
+    }
+  }
+  td.name {
+    width:200px;
+  }
+  .image,
+  .price,
+  .rating {
+    text-align:center;
+  }
+  .description {
+    overflow-y:auto;
+    max-height:68px;
+  }
+}

@@ -37,6 +37,8 @@
       mainCtrl.login = function(username){
         if(username === 'brent'){
           $location.path('/products');
+          mainCtrl.username = username;
+          console.log(mainCtrl.username);
         };
       };
 

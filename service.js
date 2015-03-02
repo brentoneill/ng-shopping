@@ -16,7 +16,7 @@
           price: '6.99',
           category: 'tech',
           picture: 'https://placeimg.com/300/300/tech',
-          description: 'what a cool tech',
+          description: 'what a cool tech. what a cool tech. what a cool tech. what a cool tech. what a cool tech. what a cool tech. what a cool tech. what a cool tech.  what a cool tech. what a cool tech. what a cool tech. what a cool tech. what a cool tech.  what a cool tech. what a cool tech. what a cool tech. what a cool tech. what a cool tech.  what a cool tech. what a cool tech. what a cool tech. what a cool tech. what a cool tech. ',
           rating: 4
         },
         {

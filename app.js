@@ -1,7 +1,4 @@
-//Angular Shopping App
-
-
-
+//Angular Shopping App -- ROUTES
 (function () {
   "use strict";
 
@@ -23,7 +20,11 @@
         controller: 'MainController as mainCtrl'
       })
       .when('/products', {
-        templateUrl: 'views/products.html',
+        templateUrl: 'views/adminproducts.html',
+        controller: 'MainController as mainCtrl'
+      })
+      .when('/productstable', {
+        templateUrl: 'views/adminproductstable.html',
         controller: 'MainController as mainCtrl'
       })
       .when('/addproduct', {

@@ -28,6 +28,8 @@
   min-height:400px;
   text-align:center;
   transition: all .5s ease;
+  background-color:white;
+  font-size:12px;
   p {
     margin-bottom:4px;
   }
@@ -40,12 +42,15 @@
   }
   &:hover {
     transform: translateY(-10px);
-    box-shadow: 4px 4px 0px rgba(0,0,0,.2);
+    box-shadow: 4px 4px 0px rgba(255,255,255,.4);
   }
 }
 
 .product-info {
   text-align:left;
+  .description{
+    height:100px;
+  }
 }
 
 .product-controls {

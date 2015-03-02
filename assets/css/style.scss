@@ -1,8 +1,11 @@
 @import 'reset';        //Resets browser default css
 @import 'config';       //Variable files
 @import 'common';       //Common styles like buttons, layout, etc
+@import 'storefront';   //Storefront view
 @import 'login';        //Login view
-@import 'product';      //Single product
+@import 'product';      //Single product view
+@import 'producttable'; //Product table view
 @import 'addproduct';   //Add product view
 @import 'editproduct';  //Edit product view
-@import 'flipping'      //Styling for flipping product on edit
+@import 'flipping';     ////Styling for Edit Product view (animation)
+@import 'responsive'    //Responsive styles

@@ -1,0 +1,53 @@
+<!--Template to display all products on admin side-->
+
+
+<div class="backbtn-wrapper">
+  <i ng-click="mainCtrl.goToLogin()" class="fa fa-2x fa-arrow-left"></i>
+</div>
+
+<div class="btn-addproduct">
+  <i ng-click="mainCtrl.goToAddProduct()" class="fa fa-2x fa-plus"></i>
+</div>
+
+<div class="container">
+  <h2>Welcome {{mainCtrl.username}}, here are your products...</h2>
+  <ul>
+    <li class="product" ng-repeat="product in mainCtrl.products">
+      <div class="flip-container">
+        <div class="flipper" ng-class="{ flipped : cardflip }">
+          <div class="front">
+            <img data-ng-src={{product.picture}} />
+            <div class="product-info">
+              <p>Name: {{product.name}}<p>
+              <p>Price: ${{product.price}}<p>
+              <p>Category: {{product.category}}<p>
+              <p class="description">Description: {{product.description}}<p>
+              <p>Rating: {{product.rating}}<p>
+              <div class="product-controls">
+                <label>
+                  <input type="checkbox" ng-model="cardflip">
+                  <i ng-click="" class="fa fa-2x fa-pencil"></i>
+                <label>
+                <i ng-click="mainCtrl.deleteProduct(product)" class="fa fa-2x fa-close"></i>
+              </div>
+            </div>
+          </div>
+          <div class="back">
+            <input type="text" ng-model="product.picture" placeholder="{{product.picture}}">
+            <input type="text" ng-model="product.name" placeholder="{{product.name}}">
+            <input type="text" ng-model="product.price" placeholder="{{product.price}}">
+            <input type="text" ng-model="product.category" placeholder="{{product.category}}">
+            <textarea type="text" ng-model="product.description" placeholder="{{product.description}}"></textarea>
+            <input type="text" ng-model="product.rating" placeholder="{{product.rating}}">
+            <div class="product-controls">
+              <label>
+                <input type="checkbox" ng-model="cardflip">
+                <i ng-click="mainCtrl.editProduct(product)" class="fa fa-2x fa-pencil"></i>
+              <label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
