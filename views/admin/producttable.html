@@ -2,18 +2,19 @@
 
 
 <div class="backbtn-wrapper">
-  <i ng-click="mainCtrl.goToLogin()" class="fa fa-2x fa-arrow-left"></i>
+  <i ng-click="adminCtrl.goToLogin()" class="fa fa-2x fa-arrow-left"></i>
 </div>
 
 <div class="btn-addproduct">
-  <i ng-click="mainCtrl.goToAddProduct()" class="fa fa-2x fa-plus"></i>
+  <i ng-click="adminCtrl.goToAddProduct()" class="fa fa-2x fa-plus"></i>
 </div>
 
 <div class="container">
-  <h2 class="admin-greeting">Welcome {{mainCtrl.username}}, here are your products...</h2>
+  <h2 class="admin-greeting">Welcome {{adminCtrl.username}}, here are your products...</h2>
   <div class="searchbox-wrapper">
     <input ng-model="query" type="text" name="searchbox" placeholder="filter products...">
   </div>
+
   <table class="product-table">
     <thead>
       <tr>
@@ -27,7 +28,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="table-item animate-repeat" ng-repeat="product in mainCtrl.products | filter:query as results" ng-class-odd="'odd'" ng-class-even="'even'">
+      <tr class="table-item animate-repeat" ng-repeat="product in adminCtrl.products | filter:query as results" ng-class-odd="'odd'" ng-class-even="'even'">
         <td class="image">
           <img data-ng-src={{product.picture}} />
         </td>
@@ -39,11 +40,12 @@
         </td>
         <td class="rating">{{product.rating}}</td>
         <td>
-            <i ng-click="mainCtrl.editProduct(product)" class="fa fa-2x fa-pencil"></i>
-            <i ng-click="mainCtrl.deleteProduct($index)" class="fa fa-2x fa-close"></i>
+            <i ng-click="adminCtrl.goToEditProduct(product._id)" class="fa fa-2x fa-pencil"></i>
+            <i ng-click="adminCtrl.deleteProduct(product._id)" class="fa fa-2x fa-close"></i>
           </div>
         </td>
       </tr>
     </tbody>
   </table>
+
 </div>

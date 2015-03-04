@@ -8,29 +8,35 @@
   ])
   .config(function($routeProvider){
     $routeProvider
+      //STORE ROUTES
       .when('/', {
-        templateUrl: 'views/storefront.html',
-        controller: 'MainController as mainCtrl'
-      })
-      .when('/admin', {
-        templateUrl: 'views/adminlogin.html',
+        templateUrl: 'views/store/storefront.html',
         controller: 'MainController as mainCtrl'
       })
       .when('/cart', {
-        templateUrl: 'views/shoppingcart.html',
+        templateUrl: 'views/store/cart.html',
         controller: 'MainController as mainCtrl'
+      })
+      .when('/detail/:productId', {
+        templateUrl: 'views/store/detailproduct.html',
+        controller: 'MainController as mainCtrl'
+      })
+      //ADMIN ROUTES
+      .when('/admin', {
+        templateUrl: 'views/admin/adminlogin.html',
+        controller: 'LoginController as loginCtrl'
       })
       .when('/products', {
-        templateUrl: 'views/adminproducts.html',
-        controller: 'MainController as mainCtrl'
-      })
-      .when('/productstable', {
-        templateUrl: 'views/adminproductstable.html',
-        controller: 'MainController as mainCtrl'
+        templateUrl: 'views/admin/producttable.html',
+        controller: 'AdminController as adminCtrl'
       })
       .when('/addproduct', {
-        templateUrl: 'views/addproduct.html',
-        controller: 'MainController as mainCtrl'
+        templateUrl: 'views/admin/addproduct.html',
+        controller: 'AdminController as adminCtrl'
+      })
+      .when('/edit/:productId', {
+        templateUrl: 'views/admin/editproduct.html',
+        controller: 'AdminController as adminCtrl'
       })
       .otherwise({
         redirectTo: '/not-found'

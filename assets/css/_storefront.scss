@@ -1,3 +1,63 @@
 a.admin-login {
   color:white;
 }
+
+.product-info {
+  margin-bottom:10px;
+  p {
+    margin-top:0;
+  }
+}
+
+.cart-count {
+  color:$white;
+}
+
+.storefront-products {
+  padding-top:10px;
+  padding-right:10px;
+}
+
+.btn-cart {
+  position:fixed;
+  top:20px;
+  right:20px;
+  background-color:black;
+  color:$white;
+  padding:10px;
+  border-radius:3px;
+  transition: all .5s ease;
+  cursor:pointer;
+  p {
+    margin:0;
+    text-align:center;
+  }
+  &:hover {
+    box-shadow: -4px 4px 0px rgba(0,0,0,.2);
+    transform:translateX(4px);
+  }
+}
+
+.btn {
+  margin-top:10px;
+  color:$white;
+  background-color:$black;
+  padding:6px;
+  border-radius:3px;
+  font-size:13px;
+  transition: all .5s ease;
+  display:inline-block;
+  &:visited{
+    color:$white;
+  }
+  &:hover {
+    box-shadow: 3px 3px 0px rgba(0,0,0,.2);
+  }
+}
+
+.btn-left {
+  margin-right:20px;
+  &:hover {
+    box-shadow: -3px 3px 0px rgba(0,0,0,.2);
+  }
+}

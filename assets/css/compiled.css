@@ -35,35 +35,92 @@ h2 {
 a.admin-login {
   color: white; }
 
-.login {
-  margin: 0 auto;
-  margin-top: 30vh;
-  width: 50%;
-  padding: 40px;
+.product-info {
+  margin-bottom: 10px; }
+  .product-info p {
+    margin-top: 0; }
+
+.cart-count {
+  color: white; }
+
+.storefront-products {
+  padding-top: 10px;
+  padding-right: 10px; }
+
+.btn-cart {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding: 10px;
   border-radius: 3px;
-  border: 3px solid black;
-  text-align: center;
-  background-color: white; }
-  .login input {
-    width: 60%;
-    padding: 10px;
-    border: 0;
-    border: thin solid black;
+  transition: all .5s ease;
+  cursor: pointer; }
+  .btn-cart p {
+    margin: 0;
+    text-align: center; }
+  .btn-cart:hover {
+    box-shadow: -4px 4px 0px rgba(0, 0, 0, 0.2);
+    transform: translateX(4px); }
+
+.btn {
+  margin-top: 10px;
+  color: white;
+  background-color: #343434;
+  padding: 6px;
+  border-radius: 3px;
+  font-size: 13px;
+  transition: all .5s ease;
+  display: inline-block; }
+  .btn:visited {
+    color: white; }
+  .btn:hover {
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2); }
+
+.btn-left {
+  margin-right: 20px; }
+  .btn-left:hover {
+    box-shadow: -3px 3px 0px rgba(0, 0, 0, 0.2); }
+
+.cart {
+  position: relative;
+  padding: 40px;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  min-height: 600px; }
+  .cart table {
+    box-shadow: none; }
+  .cart h2 {
+    color: #343434;
+    margin-top: 0; }
+  .cart th {
+    color: #343434; }
+  .cart td img {
+    max-width: 100px; }
+  .cart .description-wrapper {
+    text-align: center; }
+  .cart .quantity input {
+    width: 60px;
     border-radius: 3px;
-    font-size: 14px;
-    margin-bottom: 20px; }
-  .login a {
-    background-color: black;
-    color: white;
-    border-radius: 3px;
-    margin-left: 10px;
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    transition: all .5s ease; }
-    .login a:hover {
-      box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
-      transform: translateY(-4px); }
+    border: thin solid gray;
+    padding: 6px;
+    font-size: 13px; }
+  .cart .quantprice {
+    text-align: center; }
+  .cart .totalcost,
+  .cart .totalitems {
+    text-align: right;
+    font-weight: bold;
+    font-size: 16px; }
+  .cart .totalitemsvalue {
+    text-align: left; }
+
+.cart-stats {
+  position: absolute;
+  bottom: 40px;
+  right: 100px; }
 
 .btn-addproduct {
   position: fixed;
@@ -108,7 +165,8 @@ a.admin-login {
 .product-info {
   text-align: left; }
   .product-info .description {
-    height: 100px; }
+    height: 80px;
+    overflow-y: auto; }
 
 .product-controls {
   position: absolute;
@@ -132,6 +190,93 @@ i {
 
 .fa-pencil {
   color: blue; }
+
+.product-detail {
+  background-color: white;
+  color: #343434;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  min-height: 600px; }
+  .product-detail img {
+    max-height: 300px; }
+  .product-detail h2, .product-detail h4 {
+    color: #343434;
+    margin-top: 0px;
+    margin-bottom: 10px; }
+  .product-detail .btn {
+    color: white;
+    background-color: #343434;
+    padding: 6px;
+    border-radius: 3px;
+    font-size: 13px;
+    transition: all .5s ease; }
+    .product-detail .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2); }
+  .product-detail .btn-comment {
+    float: right;
+    padding-left: 20px;
+    padding-right: 20px; }
+  .product-detail textarea {
+    resize: none;
+    display: block;
+    margin-bottom: 10px;
+    height: 100px;
+    width: 100%;
+    border-radius: 3px;
+    font-size: 16px;
+    padding: 6px; }
+
+.row {
+  padding: 40px;
+  overflow: auto; }
+  .row .left-col,
+  .row .right-col {
+    width: 50%;
+    display: inline-block;
+    float: left; }
+  .row .left-col p {
+    margin-top: 0; }
+
+.comments-wrapper {
+  max-height: 120px;
+  overflow-y: scroll;
+  font-size: 13px; }
+  .comments-wrapper li {
+    padding: 2px;
+    margin: 0; }
+    .comments-wrapper li p {
+      margin: 0; }
+
+.login {
+  margin: 0 auto;
+  margin-top: 30vh;
+  width: 50%;
+  padding: 40px;
+  border-radius: 3px;
+  border: 3px solid black;
+  text-align: center;
+  background-color: white; }
+  .login input {
+    width: 60%;
+    padding: 10px;
+    border: 0;
+    border: thin solid black;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-bottom: 20px; }
+  .login a {
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+    margin-left: 10px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: all .5s ease; }
+    .login a:hover {
+      box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+      transform: translateY(-4px); }
 
 .table-item {
   background-color: white;
@@ -174,7 +319,7 @@ i {
       width: 80px;
       border-radius: 4px; }
   .product-table td.name {
-    width: 100px; }
+    width: 200px; }
   .product-table .image,
   .product-table .price,
   .product-table .rating {
@@ -182,7 +327,8 @@ i {
   .product-table .description {
     overflow-y: auto;
     max-height: 68px;
-    text-align: left; }
+    text-align: left;
+    width: 300px; }
 
 .add-product {
   text-align: center; }
@@ -239,6 +385,42 @@ i {
   height: 150px;
   resize: none; }
 
+.editproduct {
+  background-color: white;
+  color: #343434;
+  width: 50%;
+  padding: 20px;
+  border-radius: 3px; }
+  .editproduct .form-wrapper {
+    text-align: center; }
+  .editproduct img {
+    max-width: 50%;
+    display: inline-block;
+    margin: 0 auto; }
+  .editproduct input {
+    display: inline-block;
+    width: 70%;
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 3px;
+    border: 0;
+    border: thin solid #676767; }
+  .editproduct p {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 10px; }
+  .editproduct h2 {
+    color: #343434;
+    text-align: center; }
+  .editproduct button {
+    display: block;
+    margin: 0 auto; }
+  .editproduct span {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    margin-right: 10px; }
+
 /*CSS for FlipCard*/
 .flip-container {
   perspective: 1000;
@@ -282,10 +464,10 @@ i {
   display: block;
   width: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  /*   top:0;
+  left:0;
+  right:0;
+  bottom:0; */
   opacity: 0; }
 
 .view-animate.ng-enter.ng-enter-active {

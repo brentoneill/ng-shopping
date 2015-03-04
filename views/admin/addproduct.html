@@ -1,6 +1,6 @@
 <!--Template to add a product-->
 <div class="backbtn-wrapper">
-  <i ng-click="mainCtrl.goToProducts()" class="fa fa-2x fa-arrow-left"></i>
+  <i ng-click="adminCtrl.goToProducts()" class="fa fa-2x fa-arrow-left"></i>
 </div>
 
 
@@ -13,6 +13,6 @@
     <input type="text" ng-model="newProduct.category" placeholder="Category">
     <input type="text" ng-model="newProduct.rating" placeholder="Rating">
     <textarea type="text" ng-model="newProduct.description" placeholder="Description"></textarea>
-    <a href="" class="btn-login" ng-click="mainCtrl.addNewProduct(newProduct)">Add product</a>
+    <a href="" class="btn-login" ng-click="adminCtrl.addNewProduct(newProduct)">Add product</a>
   </form>
 </div>

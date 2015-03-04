@@ -1,72 +1,169 @@
+/////////////////////////////////
+//PRODUCT SERVICE
+/////////////////////////////////
 (function () {
   "use strict";
   angular.module('angShopping')
-    .factory('ProductsService', function() {
-      var products = [
-        {
-          name: "Product 1",
-          price: '5.99',
-          category: 'animals',
-          picture: 'https://placeimg.com/300/300/animals',
-          description: 'what a cute animal',
-          rating: 3
-        },
-        {
-          name: "Product 2",
-          price: '6.99',
-          category: 'tech',
-          picture: 'https://placeimg.com/300/300/tech',
-          description: 'what a cool tech. what a cool tech. what a cool tech. what a cool tech. what a cool tech. what a cool tech. what a cool tech. what a cool tech.  what a cool tech. what a cool tech. what a cool tech. what a cool tech. what a cool tech.  what a cool tech. what a cool tech. what a cool tech. what a cool tech. what a cool tech.  what a cool tech. what a cool tech. what a cool tech. what a cool tech. what a cool tech. ',
-          rating: 4
-        },
-        {
-          name: "Product 3",
-          price: '7.99',
-          category: 'nature',
-          picture: 'https://placeimg.com/300/300/nature',
-          description: 'what a beautiful nature',
-          rating: 5
-        },
-        {
-          name: "Product 4",
-          price: '8.99',
-          category: 'people',
-          picture: 'https://placeimg.com/300/300/people',
-          description: 'what a good people',
-          rating: 2
-        },
-        {
-          name: "Product 5",
-          price: '9.99',
-          category:'architecture',
-          picture: 'https://placeimg.com/300/300/arch',
-          description: 'what a badass building',
-          rating: 5
-        }
-      ];
+    .factory('ProductsService', function($http, $rootScope, $routeParams) {
 
+
+      var url = 'http://tiy-fee-rest.herokuapp.com/collections/crystalvis';
+
+
+      /////////////////////////////////
+      //ADMIN FUNCTIONS
+      /////////////////////////////////
+      var getSingleProduct = function(id){
+        return $http.get(url + '/' + id);
+      };
       var getAllProducts = function () {
-        return products;
+        return $http.get(url);
       };
 
       var addProduct = function (product) {
-        products.push(product);
+        product.comments = [];
+        $http.post(url, product);
+        $rootScope.$broadcast('product:created');
       };
 
-      var deleteProduct = function(idx){
-        products.splice(idx, 1);
+      var deleteProduct = function(id){
+        $http.delete(url + '/' + id);
+        $rootScope.$broadcast('product:deleted');
       };
 
-      var editAProduct = function(product, idx) {
+      var editAProduct = function(product, id) {
+        $http.put(url + '/' + id, product);
+        $rootScope.$broadcast('product:updated');
+        console.log('put request made!');
+      };
+      /////////////////////////////////
+      /////////////////////////////////
 
+
+
+
+      /////////////////////////////////
+      //CART FUNCTIONS
+      /////////////////////////////////
+      var cart = [];
+
+      var getCartProducts = function() {
+        return cart;
       };
 
-      //API stuff goes here
+      var totalCartQuant = function(){
+        var cartQuant = 0;
+        for( var i = 0; i < cart.length; i++) {
+          cartQuant += cart[i].quantity;
+        }
+        return cartQuant;
+      };
+
+      var totalCartCost = function(){
+        var cartCost = 0;
+        for( var i = 0; i < cart.length; i++ ){
+          cartCost += (cart[i].price * cart[i].quantity);
+        };
+        return round(cartCost, 2);
+      };
+
+      var addToCart = function(product) {
+        var alreadyInCart = _.where(cart, { name: product.name } );
+
+        if(alreadyInCart.length <= 0){
+          product.quantity = 1;
+          cart.push(product)
+        }
+        else{
+          var idx = cart.indexOf(alreadyInCart[0]);
+          cart[idx].quantity++;
+        }
+      };
+
+      var removeProduct = function(product){
+        var idx = cart.indexOf(product);
+        cart.splice(idx, 1);
+      };
+      /////////////////////////////////
+      /////////////////////////////////
+
+
+      /////////////////////////////////
+      //PRODUCT FUNCTIONS
+      /////////////////////////////////
+      var addComment = function(product, comment) {
+        comment = {
+          content: comment,
+          createdAt: _.now()
+        }
+        product.comments.push(comment);
+        $http.put(url + '/' + product._id, product);
+      };
+      var rateProduct = function(product, rating) {
+
+      };
+      /////////////////////////////////
+      /////////////////////////////////
+
+
+      /////////////////////////////////
+      //API
+      /////////////////////////////////
       return {
-        getProducts: getAllProducts,        //Left is public API, Right is service function
+        //Admin
+        getProduct: getSingleProduct,
+        getProducts: getAllProducts,
         addNewProduct: addProduct,
-        deleteProduct: deleteProduct
+        deleteProduct: deleteProduct,
+        editProduct: editAProduct,
+        //Product
+        addComment: addComment,
+        //Cart
+        getCart: getCartProducts,
+        addToCart: addToCart,
+        removeFromCart: removeProduct,
+        totalCartQuant : totalCartQuant,
+        totalCartCost: totalCartCost
       };
+      /////////////////////////////////
+      /////////////////////////////////
 
     });
 })();
+/////////////////////////////////
+/////////////////////////////////
+/////////////////////////////////
+/////////////////////////////////
+
+
+
+
+
+/////////////////////////////////
+//USER SERVICE
+/////////////////////////////////
+(function () {
+  "use strict";
+  angular.module('angShopping')
+    .factory('UserService', function() {
+
+      var user = "";
+
+      var setUsername = function(userName){
+        user = userName;
+        console.log(user);
+      }
+      var getUsername = function(){
+        return user;
+      }
+
+      return {
+        setUser: setUsername,
+        getUser: getUsername
+      }
+    });
+})();
+/////////////////////////////////
+/////////////////////////////////
+/////////////////////////////////
+/////////////////////////////////

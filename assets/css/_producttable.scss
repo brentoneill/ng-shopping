@@ -50,7 +50,7 @@
     }
   }
   td.name {
-    width:100px;
+    width:200px;
   }
   .image,
   .price,
@@ -61,5 +61,6 @@
     overflow-y:auto;
     max-height:68px;
     text-align:left;
+    width:300px;
   }
 }

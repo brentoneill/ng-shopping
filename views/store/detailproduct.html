@@ -1,0 +1,36 @@
+<!--DETAIL PRODUCT VIEW-->
+<div class="backbtn-wrapper">
+  <i ng-click="mainCtrl.goToStorefront()" class="fa fa-2x fa-arrow-left"></i>
+</div>
+
+<div class="btn-cart" ng-click="mainCtrl.goToCart()" >
+  <i class="fa fa-2x fa-shopping-cart"></i> | <span class="cart-count">{{mainCtrl.cartTotal}} items</span>
+  <p>$ {{mainCtrl.cartCost}}</p>
+</div>
+
+<div class="container product-detail">
+  <div class="row">
+    <div class="left-col">
+      <h2>{{mainCtrl.singleProduct.name}}</h2>
+      <h4>{{mainCtrl.singleProduct.category}}</h4>
+      <img data-ng-src={{mainCtrl.singleProduct.picture}} />
+      <p>See what people are saying about {{mainCtrl.singleProduct.name}}s</p>
+      <div class="comments-wrapper">
+        <ul>
+          <li ng-repeat="comment in mainCtrl.singleProduct.comments" ng-class-even="'even'">
+            <p><i class="fa fa-comment"></i> {{comment.content}}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="right-col">
+      <p><b>Description:</b> {{mainCtrl.singleProduct.description}}</p>
+      <p><b>Price:</b> ${{mainCtrl.singleProduct.price}}</p>
+      <p><b>Rating:</b> {{mainCtrl.singleProduct.rating}}</p>
+      <a href="" ng-click="mainCtrl.addProductToCart(mainCtrl.singleProduct)" class="btn btn-addtocart">Add to cart</a>
+      <p>Leave a comment:</p>
+      <textarea ng-model="comment"></textarea>
+      <a href="" ng-show="comment.length > 2" class="btn btn-comment" ng-click="mainCtrl.submitComment(mainCtrl.singleProduct, comment); comment = ''">Submit</a>
+    </div>
+  </div>
+</div>
