@@ -1,0 +1,27 @@
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic);
+
+$black:    #343434;
+$white:    white;
+$grey:     gray;
+$red:      red;
+$blue:     blue;
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  color:$black;
+}
+
+
+
+//Extend classes
+.shadow {
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+}
+
+.base-transition{
+  transition:all .5s ease;
+}
+
+.btn {
+
+}

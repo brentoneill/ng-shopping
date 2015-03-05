@@ -1,0 +1,27 @@
+<!--Store Front VIEW-->
+
+<div class="btn-cart" ng-click="cartCtrl.goToCart()" >
+  <i class="fa fa-2x fa-shopping-cart"></i> | <span class="cart-count">{{cartCtrl.cartTotal}} items</span>
+  <p>{{cartCtrl.cartCost | currency}}</p>
+</div>
+
+
+
+<div class="container">
+  <h2>Crystal//VISIONS</h2>
+  <ul class="storefront-products">
+    <li class="product" ng-repeat="product in cartCtrl.products">
+      <h3>{{product.name}}</h3>
+      <img data-ng-src={{product.picture}} />
+        <div class="product-info">
+          <p><b>Price:</b> ${{product.price}}<p>
+          <p><b>Category:</b> {{product.category}}<p>
+          <p class="description"><b>Description:</b> {{product.description}}<p>
+          <p><b>Rating:</b> {{product.rating}}<p>
+        </div>
+      <a href="" ng-click="cartCtrl.addProductToCart(product)" class="btn btn-left">Add to cart</a>
+      <a href="" ng-click="cartCtrl.goToProductDetail(product._id)" class="btn btn-right">Details</a>
+    </li>
+  </ul>
+  <a class="admin-login "ng-click="cartCtrl.goToLogin()" href="">Admin Login</a>
+</div>

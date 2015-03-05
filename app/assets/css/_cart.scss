@@ -1,0 +1,55 @@
+
+.cart {
+  position:relative;
+  padding:40px;
+  background-color:$white;
+  border-radius:3px;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+  min-height:600px;
+  table {
+    box-shadow: none;
+  }
+  h2 {
+    color:$black;
+    margin-top:0;
+  }
+  th {
+    color:$black;
+  }
+  td {
+    img {
+      max-width:100px;
+    }
+  }
+  .description-wrapper{
+    text-align:center;
+  }
+  .quantity {
+    input {
+      width:60px;
+      border-radius:3px;
+      border:thin solid gray;
+      padding:6px;
+      font-size:13px;
+    }
+  }
+  .quantprice {
+    text-align:center;
+  }
+  .totalcost,
+  .totalitems {
+    text-align:right;
+    font-weight:bold;
+    font-size:16px;
+  }
+  .totalitemsvalue {
+    text-align:left;
+  }
+}
+
+
+.cart-stats {
+  position:absolute;
+  bottom:40px;
+  right:100px;
+}

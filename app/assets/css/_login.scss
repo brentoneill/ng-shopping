@@ -1,0 +1,36 @@
+.login {
+  margin: 0 auto;
+  margin-top:30vh;
+  width:50%;
+  padding:40px;
+  border-radius:3px;
+  border: 3px solid black;
+  text-align:center;
+  background-color:white;
+  h2 {
+    color:$black;
+  }
+  input {
+    width:60%;
+    padding:10px;
+    border:0;
+    border:thin solid black;
+    border-radius:3px;
+    font-size:14px;
+    margin-bottom:20px;
+  }
+  a{
+    background-color:black;
+    color:white;
+    border-radius: 3px;
+    margin-left:10px;
+    padding:10px;
+    padding-left:20px;
+    padding-right:20px;
+    transition:all .5s ease;
+    &:hover{
+      box-shadow: 4px 4px 0px rgba(0,0,0,.2);
+      transform:translateY(-4px);
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import 'reset';        //Resets browser default css
+@import 'config';       //Variable files
+@import 'common';       //Common styles like buttons, layout, etc
+
+//SITE VIEW STYLES
+@import 'splash';       //Style for splash page (before store view)
+
+
+//STORE VIEW STYLES
+@import 'storefront';   //Storefront view
+@import 'cart';         //Shopping Cart view
+@import 'product';      //Single product view
+@import 'productdetail'; //Product detail view
+
+
+//ADMIN VIEW STYLES
+@import 'login';        //Admin login view
+@import 'producttable'; //Product table view
+@import 'addproduct';   //Add product view
+@import 'editproduct';  //Edit product view
+
+
+//UI CSS - animations, resonsiveness
+@import 'flipping';     ////Styling for Edit Product view (animation)
+@import 'viewanimations'; //Animations for the view
+@import 'responsive';    //Responsive styles

@@ -1,0 +1,45 @@
+<!--Shopping Cart VIEW-->
+<div class="backbtn-wrapper">
+  <i ng-click="cartCtrl.goToStorefront()" class="fa fa-2x fa-arrow-left"></i>
+</div>
+
+<div class="container cart">
+  <h2>Your Cart</h2>
+  <table class="product-table">
+    <tbody>
+      <tr class="table-item animate-repeat" ng-repeat="item in cartCtrl.cart">
+        <td>
+          <i ng-click="cartCtrl.removeFromCart(item)" class="fa fa-2x fa-close"></i>
+        </td>
+        <td>
+          <img data-ng-src={{item.picture}} />
+        </td>
+        <td class="name">
+          <h4>{{item.name}}</h4>
+          <p>{{item.category}}</p>
+        </td>
+        <td class="price">
+          ${{item.price}}
+        </td>
+        <td class="quantity">
+          <input type="number" ng-model="item.quantity" value="{{item.quantity}}">
+        </td>
+        <td class="description-wrapper">
+          <div class="description">{{item.description}}</div>
+        </td>
+        <td class="quantprice">
+          ${{cartCtrl.getItemTotal(item.quantity, item.price)}}
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="totalitems">Number of items in cart: </td>
+        <td class="totalitemsvalue">{{cartCtrl.cartTotal}}</td>
+        <td class="totalcost">Cart Total: </td>
+        <td class="totalcostvalue">$ {{cartCtrl.cartCost}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/compiled.css">
+  <link rel="stylesheet" href="assets/bower_components/font-awesome/css/font-awesome.css">
+  <title>Angular Shopping</title>
+</head>
+<body ng-app="angShopping">
+
+<div class="view-animate-container">
+  <ng-view class="view-animate">
+  <!--Angular app sits here-->
+  </ng-view>
+</div>
+
+<!--Bower components-->
+<script src="assets/bower_components/underscore/underscore.js"></script>
+<script src="assets/bower_components/angular/angular.js"></script>
+<script src="assets/bower_components/angular-route/angular-route.js"></script>
+<script src="assets/bower_components/angular-animate/angular-animate.js"></script>
+
+<!--App script goes here-->
+<script src="utility.js"></script>
+<script src="app.js"></script>
+<script src="controller.js"></script>
+<script src="service.js"></script>
+<script src="admin/admin.js"></script>
+<script src="admin/admin.module.js"></script>
+<script src="admin/admin.service.js"></script>
+<script src="cart/cart.js"></script>
+<script src="cart/cart.module.js"></script>
+<script src="cart/cart.service.js"></script>
+<script src="login/login.js"></script>
+<script src="login/login.module.js"></script>
+<script src="login/login.service.js"></script>
+
+</body>
+</html>
